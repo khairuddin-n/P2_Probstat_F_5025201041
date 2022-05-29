@@ -61,3 +61,47 @@ print(Model1)
 
 # 4d
 summary(Model1)$coefficients[2,4]
+
+# soal 5
+# 5a
+library(readr)
+library(ggplot2)
+library(multcompView)
+library(dplyr)
+
+# membaca dan mengecek data
+GTL <- read_csv("https://drive.google.com/u/0/uc?id=1aLUOdw_LVJq6VQrQEkuQhZ8FW43FemTJ&export=download")
+head(GTL)
+str(GTL)
+
+# membuat plot sederhana
+qplot(x = Temp, y = Light, geom = "point", data = GTL) +
+  facet_grid(.~Glass, labeller = label_both)
+
+# 5b
+# membuat variabel sebagai faktor untuk ANOVA
+GTL$Glass <- as.factor(GTL$Glass)
+GTL$Temp_Factor <- as.factor(GTL$Temp)
+str(GTL)
+
+# menghitung varians
+anova <- aov(Light ~ Glass*Temp_Factor, data = GTL)
+summary(anova)
+
+# 5c
+data_summary <- group_by(GTL, Glass, Temp) %>%
+  summarise(mean=mean(Light), sd=sd(Light)) %>%
+  arrange(desc(mean))
+print(data_summary)
+
+# 5d
+tukey <- TukeyHSD(anova)
+print(tukey)
+
+# 5e
+tukey.cld <- multcompLetters4(anova, tukey)
+print(tukey.cld)
+
+cld <- as.data.frame.list(tukey.cld$`Glass:Temp_Factor`)
+data_summary$Tukey <- cld$Letters
+print(data_summary)
