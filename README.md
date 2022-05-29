@@ -75,9 +75,9 @@ zsum.test(mean.x=23500, sigma.x = 3900, n.x = 100,
 Kesimpulan berdasarkan P-Value yang dihasilkan
 
 > Nilai dari P adalah 1
-P(Z > 8.9744) = 1 - P(Z < 8.977)
-= 1 - 1
-= 0
+P(Z > 8.9744) = 1 - P(Z < 8.977) </br>
+= 1 - 1 </br>
+= 0 </br>
 Oleh karena itu, Hipotesis awal (H0) bahwa "Mobil dikemudikan rata-rata lebih dari 20.000 kilometer per tahun" dapat diterima.
 
 
