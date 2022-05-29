@@ -30,7 +30,6 @@ x <- c(78, 75, 67, 77, 70, 72, 28, 74, 77)
 y <- c(100, 95, 70, 90, 90, 90, 89, 90, 100)
 sd(x-y)
 ```
-#### Screenshot
 ![1a](https://user-images.githubusercontent.com/56571284/170868831-6085be95-9041-4079-aa30-e4b982bb7656.jpg)
 
 ### 1B
@@ -38,7 +37,6 @@ Mencari nilai t (p-value)
 ```R
 t.test(x, y, alternative = "greater", var.equal = FALSE)
 ```
-#### Screenshot
 ![1b](https://user-images.githubusercontent.com/56571284/170869871-702d238d-e642-428d-99e8-889ffc8b3d70.jpg)
 
 ### 1C
@@ -51,7 +49,6 @@ oksigen , sebelum dan sesudah melakukan aktivitas 𝐴”
 var.test(x, y)
 t.test(x, y, mu = 0, alternative = "two.sided", var.equal = TRUE)
 ```
-#### Screenshot
 ![1c-1](https://user-images.githubusercontent.com/56571284/170870175-adbd20e1-46f3-4d48-89f0-7b1ac0ff14ff.jpg)
 ![1c-2](https://user-images.githubusercontent.com/56571284/170870176-04578e80-f75c-47af-b28e-2a224cd75ff5.jpg)
 
@@ -72,7 +69,6 @@ zsum.test(mean.x=23500, sigma.x = 3900, n.x = 100,
           alternative = "less", mu = 20000,
           conf.level = 0.95)
 ```
-#### Screenshot
 ![2](https://user-images.githubusercontent.com/56571284/170872835-2970f9a0-1dc0-4314-8d67-37f499fed049.jpg)
 
 ### 2C
@@ -111,7 +107,6 @@ tsum.test(mean.x=3.64, s.x = 1.67, n.x = 19,
           mean.y =2.79 , s.y = 1.32, n.y = 27, 
           alternative = "greater", var.equal = TRUE)
 ```
-#### Screenshot
 ![3b](https://user-images.githubusercontent.com/56571284/170874101-c4416590-2f1c-4e22-b370-778e02c95bcd.jpg)
 
 ### 3C
@@ -128,7 +123,6 @@ df <- 2
 
 t_tabel <- qt(p=alpha/2,df=df,lower.tail = FALSE)
 ```
-#### Screenshot
 ![3c](https://user-images.githubusercontent.com/56571284/170874246-fbef1ae3-78cc-4358-b1bb-b1841d5d704e.jpg)
 
 ### 3D
@@ -137,7 +131,6 @@ Nilai Kritikal
 sp <- sqrt(((n1-1)*sd1^2 + (n2-1)*sd2^2)/(df))
 T_value <- (mean1-mean2)/(sp*sqrt((1/n1)+(1/n2)))
 ```
-#### Screenshot
 ![3d](https://user-images.githubusercontent.com/56571284/170874434-4261874d-e3d8-43b6-9343-7927f79af480.jpg)
  
 ### 3E
